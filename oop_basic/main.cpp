@@ -5,46 +5,46 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    Circle circle_A;
-    Circle circle_B;
-    Circle * p_circle_C = new Circle;
-    circle_A.SetValues(10, 10);
-    circle_A.CopyCircle(circle_B);
-    circle_B.CopyCircle(*p_circle_C);
-    Circle & r_circle_D = circle_A;
-    circle_A.GetInfo();
-    circle_B.GetInfo();
-    p_circle_C->GetInfo();
-    r_circle_D.GetInfo();
+    Circle circle_a;
+    Circle circle_b;
+    Circle * p_circle_c = new Circle;
+    circle_a.SetValues(10, 10);
+    circle_a.CopyCircle(circle_b);
+    circle_b.CopyCircle(*p_circle_c);
+    Circle & r_circle_d = circle_a;
+    circle_a.GetInfo();
+    circle_b.GetInfo();
+    p_circle_c->GetInfo();
+    r_circle_d.GetInfo();
 
-    p_circle_C->SetValues(20, 30);
-    p_circle_C->GetInfo();
+    p_circle_c->SetValues(20, 30);
+    p_circle_c->GetInfo();
 
-    r_circle_D.SetValues(40, 60);
-    p_circle_C->CompareCircle(r_circle_D.CopyCircle(circle_A));
-    circle_A.GetInfo();
+    r_circle_d.SetValues(40, 60);
+    p_circle_c->CompareCircle(r_circle_d.CopyCircle(circle_a));
+    circle_a.GetInfo();
 
-    Circle * p_circle_E = &circle_A;
-    Circle * p_circle_F = new Circle;
-    Circle * p_circle_G = new Circle;
-    Circle * p_circle_H = new Circle;
-    Circle * p_circle_I = new Circle;
-    p_circle_G->SetValues(10, 5);
+    Circle * p_circle_e = &circle_a;
+    Circle * p_circle_f = new Circle;
+    Circle * p_circle_g = new Circle;
+    Circle * p_circle_h = new Circle;
+    Circle * p_circle_i = new Circle;
+    p_circle_g->SetValues(10, 5);
 
     cout << "------------------" << endl;
-    p_circle_G->CompareCircle(*(p_circle_E->CopyCircle(p_circle_F)));
-    p_circle_E->GetInfo();
+    p_circle_g->CompareCircle(*(p_circle_e->CopyCircle(p_circle_f)));
+    p_circle_e->GetInfo();
 
-    p_circle_E->CompareCircle(p_circle_E->CopyCircle_R(*p_circle_H));
+    p_circle_e->CompareCircle(p_circle_e->CopyCircle_R(*p_circle_h));
 
-    p_circle_E->CompareCircle(*(p_circle_E->CopyCircle_PR(p_circle_I)));
+    p_circle_e->CompareCircle(*(p_circle_e->CopyCircle_PR(p_circle_i)));
 
-    delete p_circle_C;
-    // delete p_circle_E;
-    delete p_circle_F;
-    delete p_circle_G;
-    delete p_circle_H;
-    delete p_circle_I;
+    delete p_circle_c;
+    // delete p_circle_e;
+    delete p_circle_f;
+    delete p_circle_g;
+    delete p_circle_h;
+    delete p_circle_i;
 
     return 0;
 }
